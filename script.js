@@ -1,22 +1,41 @@
-const TEXT_BOX = document.querySelector('.text_box')
-const BUTTON_CHECK_TEXT = document.querySelector('.button_check_text')
-const SPAN_RESULT = document.querySelector('.span_result')
 
-BUTTON_CHECK_TEXT.addEventListener('click', () => {
-    const text_value = TEXT_BOX.value.trim()
-    const text_length = text_value.length
+function executeScript () {
+    
+    const TEXT_BOX = document.querySelector('.text_box')
+    const BUTTON_CHECK_TEXT = document.querySelector('.button_check_text')
+    const SPAN_RESULT = document.querySelector('.span_result')
 
-    checkTextLength(text_length)
-})
+    BUTTON_CHECK_TEXT.addEventListener('click', checkTextLength)
 
-function checkTextLength(text_length) {
-    SPAN_RESULT.textContent = '' 
+    window.addEventListener('keydown', (e) => {
 
-    if (text_length <= 2000) {
-        SPAN_RESULT.textContent = '✅ You can continue'
-        SPAN_RESULT.style.color = 'green'
-    } else {
-        SPAN_RESULT.textContent = '❌ Try to split the text in smaller parts'
-        SPAN_RESULT.style.color = 'red'
+        if (e.key === 'Enter') {
+            checkTextLength()
+        }
+    })
+
+    function checkTextLength() {
+
+        const text_value = TEXT_BOX.value.trim()
+        const text_length = text_value.length
+
+        if (text_length > 0) {
+
+            SPAN_RESULT.textContent = '' 
+            SPAN_RESULT.style.display = 'flex'
+
+            if (text_length <= 2000) {
+                SPAN_RESULT.textContent = `✅ Text good to go. The text is ${text_length} characters long.`
+                SPAN_RESULT.style.color = 'green'
+            } else {
+                SPAN_RESULT.textContent = `❌ Make the text paragraph length shorter. The text is ${text_length} characters long.`
+
+                SPAN_RESULT.style.color = 'red'
+            }
+        }
     }
 }
+
+
+
+window.addEventListener('load', executeScript)
