@@ -17,9 +17,8 @@ function executeScript () {
             checkTextLength()
 
         } else if (e.key === 'Backspace' && text_length <= 1) {
-            SPAN_RESULT.textContent = '' 
-            SPAN_RESULT.style.display = 'none'
-        }
+            hideSpanResult()
+        } 
     })
 
     window.addEventListener('click', (e) => {
@@ -29,8 +28,7 @@ function executeScript () {
         const text_length = text_value.length
 
         if (text_length <= 1) {
-            SPAN_RESULT.textContent = '' 
-            SPAN_RESULT.style.display = 'none'
+            hideSpanResult()
         }
     })
 
@@ -41,9 +39,6 @@ function executeScript () {
 
         if (text_length > 0) {
 
-            SPAN_RESULT.textContent = '' 
-            SPAN_RESULT.style.display = 'flex'
-
             if (text_length <= 2000) {
                 SPAN_RESULT.textContent = `✅ Text good to go. The text is ${text_length} characters long.`
                 SPAN_RESULT.style.color = 'green'
@@ -52,6 +47,8 @@ function executeScript () {
                 SPAN_RESULT.textContent = `❌ Make the text paragraph length shorter. The text is ${text_length} characters long.`
                 SPAN_RESULT.style.color = 'red'
             } 
+
+            showSpanResult()
         }
 
         changeButtonStyle()
@@ -64,6 +61,16 @@ function executeScript () {
         setTimeout(() => {
             BUTTON_CHECK_TEXT.classList.remove('pressed')
         }, 100)
+    }
+
+    function hideSpanResult () {
+        SPAN_RESULT.textContent = '' 
+        SPAN_RESULT.style.display = 'none'
+    }
+
+    function showSpanResult () {
+        SPAN_RESULT.textContent = '' 
+        SPAN_RESULT.style.display = 'flex'
     }
 }
 
