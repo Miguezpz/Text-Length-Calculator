@@ -9,8 +9,27 @@ function executeScript () {
 
     window.addEventListener('keydown', (e) => {
 
+        console.log(e)
+        const text_value = TEXT_BOX.value.trim()
+        const text_length = text_value.length
+
         if (e.key === 'Enter') {
             checkTextLength()
+        } else if (e.key === 'Backspace' && text_length <= 1) {
+            SPAN_RESULT.textContent = '' 
+            SPAN_RESULT.style.display = 'none'
+        }
+    })
+
+    window.addEventListener('click', (e) => {
+
+        console.log(e)
+        const text_value = TEXT_BOX.value.trim()
+        const text_length = text_value.length
+
+        if (text_length <= 1) {
+            SPAN_RESULT.textContent = '' 
+            SPAN_RESULT.style.display = 'none'
         }
     })
 
@@ -27,11 +46,11 @@ function executeScript () {
             if (text_length <= 2000) {
                 SPAN_RESULT.textContent = `✅ Text good to go. The text is ${text_length} characters long.`
                 SPAN_RESULT.style.color = 'green'
-            } else {
+            } else if (text_length > 2000) {
                 SPAN_RESULT.textContent = `❌ Make the text paragraph length shorter. The text is ${text_length} characters long.`
 
                 SPAN_RESULT.style.color = 'red'
-            }
+            } 
         }
     }
 }
