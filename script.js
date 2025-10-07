@@ -39,6 +39,8 @@ function executeScript () {
 
         if (text_length > 0) {
 
+            showSpanResult()
+
             if (text_length <= 2000) {
                 SPAN_RESULT.textContent = `✅ Text good to go. The text is ${text_length} characters long.`
                 SPAN_RESULT.style.color = 'green'
@@ -47,8 +49,6 @@ function executeScript () {
                 SPAN_RESULT.textContent = `❌ Make the text paragraph length shorter. The text is ${text_length} characters long.`
                 SPAN_RESULT.style.color = 'red'
             } 
-
-            showSpanResult()
         }
 
         changeButtonStyle()
