@@ -36,29 +36,32 @@ body {
     justify-content: space-between;
     color: white;
     /* background-color: red; */
-    margin: 50px 0;
+    margin: 50px 0 25px 0;
     width: auto;
 }
 
 .div_title img {
     width: 80px;
     height: 80px;
-    margin: 0 25px;
+    margin: 0 25px 0 0;
 }
 
 .div_title h1 {
-    margin: 0 25px;
+    margin: 0 0 0 25px;
 }
 
 .p_description {
-    background-color: rebeccapurple;
+    background-color: #001AB8;
     color: white;
     width: auto;
     height: auto;
     text-align: center;
-    margin-bottom: 25px;
+    margin-bottom: 50px;
     padding: 15px;
     font-size: small;
+
+    border: 1px solid transparent;
+    border-radius: 20px;
 }
 
 .text_box {
@@ -76,7 +79,7 @@ body {
 }
 
 .button_check_text {
-    margin-bottom: 25px;
+    margin-bottom: 50px;
     padding: 8px 12px;
     font-size: medium;
 }
