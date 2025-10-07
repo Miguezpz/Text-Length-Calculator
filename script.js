@@ -15,6 +15,7 @@ function executeScript () {
 
         if (e.key === 'Enter') {
             checkTextLength()
+
         } else if (e.key === 'Backspace' && text_length <= 1) {
             SPAN_RESULT.textContent = '' 
             SPAN_RESULT.style.display = 'none'
@@ -52,6 +53,17 @@ function executeScript () {
                 SPAN_RESULT.style.color = 'red'
             } 
         }
+
+        changeButtonStyle()
+    }
+
+    function changeButtonStyle () {
+
+        BUTTON_CHECK_TEXT.classList.add('pressed')
+
+        setTimeout(() => {
+            BUTTON_CHECK_TEXT.classList.remove('pressed')
+        }, 150)
     }
 }
 

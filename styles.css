@@ -23,6 +23,8 @@ body {
     width: 98vw;
     height: auto;
     background-color: rgba(0, 0, 0, 0.11);
+    border: 1px solid transparent;
+    border-radius: 20px;
 }
 
 
@@ -54,8 +56,8 @@ body {
     width: 70%;
     min-height: 200px;
     max-height: 800px;
-    resize: vertical; /* el usuario puede estirar manualmente */
-    overflow-y: auto; /* muestra scroll cuando llega al máximo */
+    resize: vertical;
+    overflow-y: auto;
     white-space: pre-wrap;
     word-wrap: break-word;
     padding: 15px;
@@ -81,4 +83,9 @@ body {
 .border_radius {
     border: 1px solid ;
     border-radius: 20px;
+}
+
+.button_check_text.pressed {
+  background-color: blue !important;
+  color: white !important;
 }
