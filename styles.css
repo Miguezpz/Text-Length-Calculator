@@ -50,6 +50,17 @@ body {
     margin: 0 25px;
 }
 
+.p_description {
+    background-color: rebeccapurple;
+    color: white;
+    width: auto;
+    height: auto;
+    text-align: center;
+    margin-bottom: 25px;
+    padding: 15px;
+    font-size: small;
+}
+
 .text_box {
     background-color: rgb(32, 32, 32);
     color: white;
@@ -65,7 +76,7 @@ body {
 }
 
 .button_check_text {
-    margin-bottom: 50px;
+    margin-bottom: 25px;
     padding: 8px 12px;
     font-size: medium;
 }

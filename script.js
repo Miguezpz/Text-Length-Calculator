@@ -47,9 +47,9 @@ function executeScript () {
             if (text_length <= 2000) {
                 SPAN_RESULT.textContent = `✅ Text good to go. The text is ${text_length} characters long.`
                 SPAN_RESULT.style.color = 'green'
+
             } else if (text_length > 2000) {
                 SPAN_RESULT.textContent = `❌ Make the text paragraph length shorter. The text is ${text_length} characters long.`
-
                 SPAN_RESULT.style.color = 'red'
             } 
         }
@@ -63,7 +63,7 @@ function executeScript () {
 
         setTimeout(() => {
             BUTTON_CHECK_TEXT.classList.remove('pressed')
-        }, 150)
+        }, 100)
     }
 }
 
